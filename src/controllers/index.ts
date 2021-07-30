@@ -1,2 +1,1 @@
-export * from './ping.controller';
-export * from './class-mate.controller';
+export * from './class-mates.controller';

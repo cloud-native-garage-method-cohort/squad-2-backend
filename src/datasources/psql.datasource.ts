@@ -2,10 +2,14 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'db',
-  connector: 'memory',
-  localStorage: '',
-  file: 'data/testdb.json'
+  name: 'psql',
+  connector: 'postgresql',
+  url: '',
+  host: 'postgresql.squad-2.svc.cluster.local',
+  port: 5432,
+  user: 'postgres',
+  password: 'admin',
+  database: 'classmates'
 };
 
 // Observe application's life cycle to disconnect the datasource when
@@ -13,13 +17,13 @@ const config = {
 // gracefully. The `stop()` method is inherited from `juggler.DataSource`.
 // Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
 @lifeCycleObserver('datasource')
-export class DbDataSource extends juggler.DataSource
+export class PsqlDataSource extends juggler.DataSource
   implements LifeCycleObserver {
-  static dataSourceName = 'db';
+  static dataSourceName = 'psql';
   static readonly defaultConfig = config;
 
   constructor(
-    @inject('datasources.config.db', {optional: true})
+    @inject('datasources.config.psql', {optional: true})
     dsConfig: object = config,
   ) {
     super(dsConfig);
