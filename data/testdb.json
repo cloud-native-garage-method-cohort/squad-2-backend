@@ -1,0 +1,11 @@
+{
+  "ids": {
+    "ClassMateModel": 3
+  },
+  "models": {
+    "ClassMateModel": {
+      "1": "{\"firstname\":\"Enrico\",\"lastname\":\"Romeo\",\"role\":\"Automation Engineer\",\"city\":\"Segrate\",\"country\":\"Italy\",\"id\":1}",
+      "2": "{\"firstname\":\"Edward\",\"lastname\":\"Ciggaar\",\"role\":\"Cloud Engineer\",\"city\":\"Amsterdam\",\"country\":\"Netherlands\",\"id\":2}"
+    }
+  }
+}
